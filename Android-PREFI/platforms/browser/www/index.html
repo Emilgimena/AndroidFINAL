@@ -3,43 +3,53 @@
 <head>
 
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="css/dark-onsen-css-components.min.css">
 </head>
-
+<style type="text/css">
+  ons-button {
+    text-align: center;
+  }
+</style>
 <body>
   <ons-page id="myPage">
     <ons-toolbar>
-        <div class="center">QPI CALCULATOR</div>
+        <div class="center" style="text-align: center;">QPI CALCULATOR</div>
     </ons-toolbar>
 
     <div class="content">
-      <ons-card>
-        <ons-row>
-          <textarea id="input" value="" rows="2" cols="20"></textarea>
-         
-          </ons-row>
-
-        <ons-row>
-          <ons-button id="A" value="4.0"> A </ons-button>
-          <ons-button id="Bplus" value="3.5"> B+ </ons-button>
-          <ons-button id="B" value="3.0"> B </ons-button>
-        </ons-row>
-
-        <ons-row>
-          <ons-button id="Cplus" value="2.5"> C+ </ons-button>
-          <ons-button id="C" value="2.0"> C </ons-button>
-          <ons-button id="D" value="1.0"> D </ons-button>
-          <ons-button id="F" value="0"> F/FD </ons-button>
-        </ons-row>
-
-        <ons-row>
-          <ons-button id="backspace" value=""> &#x2190 </ons-button>
-          <ons-button id="clear" value=""> CLR </ons-button>
-          <ons-button id="add" value="+"> Add </ons-button>
-          <ons-button id="equal" value="="> = </ons-button>
-        </ons-row>
-      </ons-card>
-      
+         <ons-card>
+          <div class="title"><textarea maxlength="30" class="textarea textarea--transparent"id="input" value="" cols="30" style="width: 330px;font-size: 25px"></textarea></div>
+          <div class="content">
+          </div>
+        </ons-card >
+        <ons-card>
+          <div class="card__content"><textarea class="textarea textarea--transparent"id="input" value="" rows="1" cols="10" style="width: 330px; font-size: 20px"></textarea></div>
+          <div class="content">
+          </div>
+        </ons-card>
+         <section style="padding: 8px;">
+      <ons-row style="padding-bottom: 3px;">
+        <ons-col style="height: auto; width: 100%"><ons-button id="A" value="A" modifier="large" style=" width:100%;background-color: #595959;height: 75px;text-align: center; line-height: 75px">A</ons-button></ons-col>
+        <ons-col width="3px"></ons-col>
+        <ons-col style="height: auto; width: 100%"><ons-button value="B+" id="Bplus" modifier="large" style=" width:100%;background-color: #595959;height: 75px;text-align: center; line-height: 75px">B+</ons-button></ons-col>
+        <ons-col width="3px"></ons-col>
+        <ons-col style="height: auto; width: 100%"><ons-button id="B" value="B" modifier="large" style=" width:100%;background-color: #595959;height: 75px;text-align: center; line-height: 75px">B</ons-button></ons-col>
+      </ons-row>
+      <ons-row style="padding-bottom: 3px;">
+        <ons-col style="height: auto; width: 100%"><ons-button id="Cplus" value="C+" modifier="large" style="background-color: #595959; height: 75px; width:100%;text-align: center; line-height: 75px">C+</ons-button></ons-col>
+        <ons-col width="3px"></ons-col>
+        <ons-col style="height: auto; width: 100%"><ons-button id="C" value="C" modifier="large" style=" width:100%;background-color: #595959;height: 75px;text-align: center; line-height: 75px">C</ons-button></ons-col>
+        <ons-col width="3px"></ons-col>
+        <ons-col style="height: auto; width: 100%"><ons-button id="D" value="D" modifier="large" style=" width:100%;background-color: #595959;height: 75px;text-align: center; line-height: 75px">D</ons-button></ons-col>
+      </ons-row>
+      <ons-row style="padding-bottom: 3px;">
+        <ons-col><ons-button id="F" value="F/FD" modifier="large" style="background-color: #595959;height: 75px; width:100%;text-align: center; line-height: 75px">F/FD</ons-button></ons-col>
+        <ons-col width="3px"></ons-col>
+        <ons-col style="height: auto; width: 100%"><ons-button id="clear"  value="" modifier="large" style=" width:100%;background-color:#2D2D2D;height: 75px;text-align: center; line-height: 75px">CLR</ons-button></ons-col>
+        <ons-col width="3px"></ons-col>
+        <ons-col style="height: auto; width: 100%"><ons-button id="equal" value="=" modifier="large" style=" width:100%;height: 75px;text-align: center; line-height: 75px">=</ons-button></ons-col>
+      </ons-row>
+    </section>
     </div>
   </ons-page>
     <script src="js/jquery.js"></script>
