@@ -47,3 +47,22 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+$(document).on("click", '#A,#Bplus,#B,#Cplus,#C,#D,#F,#backspace,#clear,#add,#equals', function (e) {
+  var v = $(this).attr("value");
+  var total = $('#input').val($('#input').val() + v); 
+});
+
+$(document).on("click", '#equal', function (e) {
+  $('#input').val(eval($('#input').val()));
+});
+
+
+$(document).on("click", '#clear', function(e) {
+    $('text#inputrea').val('');
+});
+
+
+$(document).on("click", '#backspace', function(e) {
+    $('#input').val($('#input').val().substring(0, $('#input').val().length - 1));
+});
