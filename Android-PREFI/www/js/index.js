@@ -48,18 +48,64 @@ var app = {
     }
 };
 
+	var c = 0;
+    var grd = 0;
+	var arr = [];
+    var ttl = 0.0;
 $(document).on("click", '#A,#Bplus,#B,#Cplus,#C,#D,#F,#backspace,#clear,#add,#equals', function (e) {
   var v = $(this).attr("value");
-  var total = $('#input').val($('#input').val() + v); 
+  if (v == "A") {
+    grd = 4.0;
+  }	
+  else if(v == "B"){
+    grd = 3.0;
+  }
+  else if(v == "B+"){
+    grd = 3.5;
+  }
+  else if(v == "C"){
+    grd = 2.0;
+  }
+  else if(v == "C+"){
+    grd = 2.5;
+  }
+  else if(v == "D"){
+    grd = 1.0;
+  }
+  else{
+    grd = 0.0;
+  }
+  if(c < 7){
+  	var total = $('#input').val($('#input').val() + v + "   ");
+    arr.push(grd); 
+
+	}
+	else if (c == 7){
+		var total = $('#input').val($('#input').val() + v); 
+        arr.push(grd);
+	}
+	c+=1	
 });
 
 $(document).on("click", '#equal', function (e) {
-  $('#input').val(eval($('#input').val()));
+
+  for(var i = 0; i < arr.length; i++){
+    ttl = ttl + arr[i]; 
+  }
+  ttl = ttl/arr.length;
+  ttl = ttl.toFixed(2);
+  $('#input1').val(ttl);
+  $('#input').val("");
+  c = 0;
+  arr.length = 0;
+  ttl = 0.0;
 });
 
 
 $(document).on("click", '#clear', function(e) {
-    $('text#inputrea').val('');
+    $('#input').val("");
+    c = 0;
+    arr.length = 0;
 });
 
 
