@@ -109,6 +109,3 @@ $(document).on("click", '#clear', function(e) {
 });
 
 
-$(document).on("click", '#backspace', function(e) {
-    $('#input').val($('#input').val().substring(0, $('#input').val().length - 1));
-});
